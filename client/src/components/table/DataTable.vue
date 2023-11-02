@@ -25,7 +25,7 @@
   </a-modal>
 </template>
 <script setup>
-import { ref } from 'vue'
+import { reactive, ref } from 'vue'
 
 defineProps({
   data: Array,
@@ -42,6 +42,13 @@ const handleOk = () => {
     confirmLoading.value = false
   })
 }
+
+const formRef = ref()
+const formState = reactive({
+  name: '',
+  age: null,
+  book: ''
+})
 </script>
 <style scoped>
 #components-table-demo-summary tfoot th,
